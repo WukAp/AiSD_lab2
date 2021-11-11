@@ -6,9 +6,9 @@ void generateArray(int* array, size_t size) {
 	for (int i = 0; i < size; i++)
 		array[i] = rand()%100;
 }
-void generateArray(char* array, size_t size) {
+void generateArray(unsigned char* array, size_t size) {
 	for (int i = 0; i < size; i++)
-		array[i] = char(rand()%128);
+		array[i] = (unsigned char)(rand()%256);
 }
 
 template <typename T>
@@ -27,7 +27,7 @@ int main(){
 	delete[] array;
 
 	//Counting Sort
-	char* char_array = new char[SIZE];
+	unsigned char* char_array = new unsigned char[SIZE];
 	generateArray(char_array, SIZE);
 	std::cout << "Counting Sort" << std::endl;
 	std::cout << "input array: ";
