@@ -49,14 +49,14 @@ public:
         }
     }
 
-    static void countingSort(unsigned char* array, size_t size) {
+    static void countingSort(char* array, size_t size) {
         const int NUMBER_OF_CHAR = 256;
         int* counting_array = new int [NUMBER_OF_CHAR] {}; //array of all char values from zeros
         for (int i = 0; i < size; i++) //counting values in the passed array
-            counting_array[array[i]]++;
+            counting_array[(int)(unsigned char)array[i]]++;
         for (int i = 0, j = 0; j< NUMBER_OF_CHAR; j++) // forming a sorted array
             for (int k = 0; k < counting_array[j]; k++)
-                array[i++] = (unsigned char)j;
+                array[i++] = (char)(unsigned char)j;
 
         delete[] counting_array;
     }
